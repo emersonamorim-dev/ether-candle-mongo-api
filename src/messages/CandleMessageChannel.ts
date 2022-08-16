@@ -40,7 +40,7 @@ async consumeMessages() {
     if (this._channel) {
         this._channel.consume(process.env.QUEUE_NAME, async msg => {
             const candleObj = JSON.parse(msg.content.toString())
-            console.log('Message received')
+            console.log('Message recebida')
             console.log(candleObj)
             this._channel.ack(msg)
 
